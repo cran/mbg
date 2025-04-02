@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>All model runner options</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">All model runner options</h1>
+
+
+
+<p>This article breaks down all the options available when running <code>mbg</code> models. For a summary of these terms, see the documentation for the <a href="../reference/MbgModelRunner.html#method-new-">mbg::MBGModelRunner$new() method</a></p>
+<hr />
+<div id="mbg-model-basics" class="section level1">
+<h1>1: MBG model basics</h1>
+<p>The model always requires two terms: <code>input_data</code>, which includes all point observations of the outcome to be estimated, and <code>id_raster</code>, which lays out the study area.</p>
+<div id="a-input-data" class="section level2">
+<h2>1.A: Input data</h2>
+<p>Formatted as a <code>data.frame</code> or <code>data.table::data.table</code>. Should contain at least the following fields:</p>
+<ul>
+<li><code>indicator</code>: Contains the outcome to be modeled. For binomial or Poission MBG models, this is the numerator. For Gaussian models, this is the observed mean.</li>
+<li><code>samplesize</code>: Only required for binomial or Poisson data. This is the denominator for each observations.</li>
+<li><code>sd</code>: Only required for Gaussian models. This is the observed standard deviation for each observation.</li>
+<li><code>x</code>: The point’s x position, in the same coordinate reference system as the ID raster. For unprojected data, this is the longitude</li>
+<li><code>y</code>: The points y position, in the same coordinate reference system as the ID raster. For unprojected data, this is the latitude</li>
+<li><code>cluster_id</code>: A unique identifier for each row in the data</li>
+</ul>
+</div>
+<div id="b-id-raster" class="section level2">
+<h2>1.B: ID raster</h2>
+<p>A <code>terra::SpatRaster</code> object meeting the following requirements:</p>
+<ul>
+<li>Has a single layer</li>
+<li>Covers the entire study area</li>
+<li>Contains non-NA pixel values for pixels that should be estimated by the model</li>
+</ul>
+<p>An ID raster can be created using the <code>mbg::build_id_raster</code> function.</p>
+<p>Before running a model, you could use the <code>terra::extract</code> function to ensure that all points in your input data overlap a non-NA pixel in the ID raster.</p>
+<hr />
+</div>
+</div>
+<div id="model-family-and-link-function" class="section level1">
+<h1>2: Model family and link function</h1>
+<p>The arguments <code>inla_family</code>, <code>inla_link</code>, and <code>inverse_link</code> give the relationship between the observed data and the linear combination of effects that make up the model. The model defaults specify a binomial likelihood:</p>
+<ul>
+<li><code>inla_family = &#39;binomial&#39;</code></li>
+<li><code>inla_link = &#39;logit&#39;</code></li>
+<li><code>inverse_link = &#39;plogis&#39;</code></li>
+</ul>
+<p>For binomial data, each data point with numerator <span class="math inline">\(y_i\)</span> and denominator <span class="math inline">\(N_i\)</span> is evaluated against a probability <span class="math inline">\(p_i\)</span>, which is governed by a logit-linear combination of model effects:</p>
+<p><span class="math display">\[
+y_i \sim Binomial(N_i, p_i)
+\\
+logit(p_i) = \ ...
+\]</span></p>
+<p>The actual model effects (<span class="math inline">\(...\)</span>) are described in the following section.</p>
+<hr />
+</div>
+<div id="model-effects" class="section level1">
+<h1>3: Model effects</h1>
+<p>The model currently has four effect types which can be toggled and controlled via settings passed to <code>mbg::MbgModelRunner</code>.</p>
+<div id="a-covariate-effects" class="section level2">
+<h2>3.A: Covariate effects</h2>
+<p>Relevant settings:</p>
+<ul>
+<li><code>use_covariates</code> (default <code>TRUE</code>)</li>
+<li><code>covariate_rasters</code> (default <code>NULL</code>)</li>
+<li><code>use_stacking</code> (default <code>FALSE</code>)</li>
+</ul>
+<p>A covariate effect will only be included if <code>use_covariates</code> is <code>TRUE</code> (the default) and <code>covariate_rasters</code> are passed. The <code>covariate_rasters</code> are an optional list of <code>terra::SpatRaster</code> pixel-level predictive covariates. They can be incorporated into the model in two different ways depending on the value of <code>use_stacking</code>:</p>
+<div id="a.i-standard-covariate-effect" class="section level3">
+<h3>3.A.i: Standard covariate effect</h3>
+<p>Only applied if a covariate effect is included and <code>use_stacking</code> is <code>FALSE</code> (the default).</p>
+<p>The covariate effect at observation <span class="math inline">\(i\)</span> is <span class="math inline">\(\gamma^{covariates}_i = \vec{\beta}X_{s_i}\)</span>, where <span class="math inline">\(\vec{\beta}\)</span> are linear effects on the matrix of covariate values <span class="math inline">\(X\)</span> evaluated at the location of observation <span class="math inline">\(i\)</span> (<span class="math inline">\(s_i\)</span>).</p>
+<p><strong>Note that an intercept is not included by default.</strong> If you want a model with no covariate effects other than an intercept, pass a <code>covariate_rasters</code> with an <code>intercept</code> raster containing all 1s.</p>
+<p>A prior is applied to the variance of effects on all covariates other than the intercept: <code>prior_covariate_effect</code> (default <code>list(threshold = 3, prob_above = 0.05)</code>) is a <a href="https://projecteuclid.org/journals/statistical-science/volume-32/issue-1/Penalising-Model-Component-Complexity--A-Principled-Practical-Approach-to/10.1214/16-STS576.full">penalized complexity prior</a> that can be expressed as a level of certainty about the standard deviation on each fixed effect <span class="math inline">\(\beta\)</span>. For example, the default prior corresponds to <span class="math inline">\(P(\sigma_{\beta} &gt; 3) = 0.05\)</span>.</p>
+</div>
+<div id="a.ii-stacked-ensemble-model" class="section level3">
+<h3>3.A.ii: Stacked ensemble model</h3>
+<p>Only applied if a covariate effect is included and <code>use_stacking</code> is <code>TRUE</code>.</p>
+<p>For a stacked ensemble model, the covariate effect for observation <span class="math inline">\(i\)</span> is: <span class="math display">\[
+\gamma^{covariates}_i = \sum_{j=1}^{J}\left[ w_{j}  f_j(X_{s_i}) \right]
+\\
+Constraints: w_j &gt; 0 \ \forall \ j, \ \textstyle \sum_{j=1}^{J}(w_j) = 1
+\]</span> Where:</p>
+<ul>
+<li><span class="math inline">\(\vec{f}\)</span>: Predictions from a set of <em>J</em> regression models fit to the raw covariate data <span class="math inline">\(X\)</span></li>
+<li><span class="math inline">\(\vec{w}\)</span>: A weighting vector corresponding to each regression model <span class="math inline">\(f_j\)</span>. The weights are constrained to be strictly greater than zero and to sum to one.</li>
+<li><span class="math inline">\(X_{s_i}\)</span>: The raw covariate values at the location of observation <span class="math inline">\(i\)</span>, <span class="math inline">\(s_i\)</span></li>
+</ul>
+<p>Relevant model settings:</p>
+<ul>
+<li><code>stacking_model_settings</code> (default <code>list(gbm = NULL, treebag = NULL,     rf = NULL)</code>): Defines the list of component models <span class="math inline">\(f_j(X)\)</span> to be fitted to the covariates. A named list—each name corresponds to a <a href="https://topepo.github.io/caret/available-models.html">regression model</a> in the <code>caret</code> package, and each value stores optional settings that can be passed to that model.</li>
+<li><code>stacking_cv_settings</code> (default <code>list(method = &#39;repeatedcv&#39;, number     = 5, repeats = 5)</code>): These are used by <code>caret::traincontrol</code> to cross-validate each regression model</li>
+<li><code>stacking_use_admin_bounds</code> (default <code>FALSE</code>), <code>admin_bounds</code> (default <code>NULL</code>), <code>admin_bounds_id</code> (default <code>NULL</code>): If <code>stacking_use_admin_bounds</code> is <code>TRUE</code> and the other two values are set, adds administrative fixed effects to each of the component models.</li>
+<li><code>stacking_prediction_range</code> (default <code>NULL</code>): Can be used to restrict the prediction range of each component regression model. For binomial data, a reasonable limit is to not predict outside of <code>c(0, 1)</code>.</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="b-gaussian-process" class="section level2">
+<h2>3.B: Gaussian process</h2>
+<p>If the setting <code>use_gp</code> is <code>TRUE</code> (the default), adds a spatially correlated effect:</p>
+<p><span class="math display">\[
+Z \sim GP(0, \Sigma_s)
+\]</span> Where <span class="math inline">\(Z\)</span> is a Gaussian process with mean zero and stationary isotropic Matern covariance over space (<span class="math inline">\(\Sigma_s\)</span>).</p>
+<p>The Gaussian process is informed by priors on the range and variance:</p>
+<ul>
+<li><code>prior_spde_range</code> (default <code>list(threshold = 0.1, prob_below     = 0.05)</code>) Prior on the geostatistical range of the Gaussian process, the distance beyond which there is little or no spatial autocorrelation between pairs of points on the GP. This is a penalized complexity prior expressed as a named list with two items. The <code>threshold</code> is a distance expressed <em>relative to the diameter of the study area</em>: for example, the default <code>threshold</code> of 0.1 corresponds to a geostatistical range equivalent to one-tenth the diameter of the study area. The <code>prob_below</code> is the probability that the true range falls below this threshold. In other words, the default prior is <span class="math inline">\(P(range &lt; \frac{diameter}{10}) = 0.05\)</span></li>
+<li><code>prior_spde_sigma</code> (default <code>list(threshold = 3, prob_above     = 0.05)</code>) Penalized complexity prior on the variance of the Gaussian process, expressed in terms of the standard deviation <span class="math inline">\(\sigma_Z\)</span>. The default corresponds to a prior belief that <span class="math inline">\(P(\sigma_Z &gt; 3) = 0.05\)</span></li>
+</ul>
+<p>To simplify estimation, the R-INLA package represents the continuous Gaussian process on a 2D spatial mesh. Three more settings control the mesh:</p>
+<ul>
+<li><code>mesh_max_edge</code> (default <code>c(0.2, 5.0)</code>): The maximum length of a mesh edge in areas where there is little to no data. Expressed in the same units of measurement as the projection used for the <code>id_raster</code> (for unprojected data, this is decimal degrees). The first term is the maximum edge length within the study area, and the second term is the maximum edge length outside the study area (the mesh extends beyond the study area to mitigate edge effects).</li>
+<li><code>mesh_cutoff</code> (default <code>0.04</code>): The minimum length of a mesh edge in areas where data is dense. Expressed in the same units of measurement as <code>mesh_max_edge</code>.</li>
+<li><code>spde_integrate_to_zero</code> (default <code>FALSE</code>): Should the volume under the fitted mesh integrate to zero?</li>
+</ul>
+<p>For more details about the INLA approach to approximate Gaussian process regression, see the papers at the bottom of this page.</p>
+<hr />
+</div>
+<div id="c-administrative-level-effect" class="section level2">
+<h2>3.C: Administrative-level effect</h2>
+<p>This effect is a random intercept grouped by administrative unit. The administrative level (polygon boundaries) of interest can be set by the user. If the effect is on, then the following term is added:</p>
+<p><span class="math display">\[
+\gamma^{admin}_{a_i} \sim N(0, \sigma^2_{admin})
+\]</span> In other words, <span class="math inline">\(\vec\gamma^{admin}\)</span> is an vector of random intercepts with length equal to the total number of administrative units, IID normal with mean 0 and variance <span class="math inline">\(\sigma^2_{admin}\)</span>. All observations <span class="math inline">\(i\)</span> in the same administrative division <span class="math inline">\(a\)</span> share the same intercept <span class="math inline">\(\gamma^{admin}_{a_i}\)</span>.</p>
+<p>Relevant settings:</p>
+<ul>
+<li><code>use_admin_effect</code> (default <code>FALSE</code>): Should the administrative-level effect be included in the model?</li>
+<li><code>prior_admin_effect</code> (default <code>list(threshold = 3, prob_above     = 0.05)</code>): A prior applied to the administrative effect variance, expressed in terms of the standard deviation. The default settings correspond to the prior belief that <span class="math inline">\(P(\sigma_{admin} &gt; 3) = 0.05\)</span></li>
+<li><code>admin_bounds</code> (default <code>NULL</code>): Administrative bounds that will be used to group observations.</li>
+<li><code>admin_bounds_id</code> (default <code>NULL</code>): Unique identifier field for <code>admin_bounds</code></li>
+</ul>
+<hr />
+</div>
+<div id="d-nugget" class="section level2">
+<h2>3.D: Nugget</h2>
+<p>The nugget is an independently and identically distributed (IID) normal effect applied to each observation. It corresponds to “irreducible variation” not captured by any other model effect:</p>
+<p><span class="math display">\[
+\gamma^{Nugget}_i \sim N(0, \sigma^2_{nugget})
+\]</span></p>
+<p>Relevant settings:</p>
+<ul>
+<li><code>use_nugget</code> (default <code>TRUE</code>): Should the nugget effect be included in model fitting?</li>
+<li><code>prior_nugget</code> (default <code>list(threshold = 3, prob_above = 0.05)</code>): A prior applied to the nugget variance, expressed in terms of the standard deviation. The default settings correspond to the prior belief that <span class="math inline">\(P(\sigma_{nugget} &gt; 3) = 0.05\)</span></li>
+<li><code>nugget_in_predict</code> (default <code>TRUE</code>): If <code>TRUE</code>, independent samples from <span class="math inline">\(N(0, \sigma^2_{nugget})\)</span> are added to each pixel-level predictive draw.</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="aggregation-to-polygon-boundaries" class="section level1">
+<h1>4: Aggregation to polygon boundaries</h1>
+<p>As shown in the <a href="mbg.html">introductory tutorial</a>, the <code>mbg::MbgModelRunner</code> object can automatically aggregate predictions to administrative boundaries. The following three objects are required to perform aggregation:</p>
+<ul>
+<li><code>aggregation_table</code>: A table created by <code>mbg::build_aggregation_table</code>. Contains information about the proportional area of each pixel within each administrative boundary polygon.</li>
+<li><code>aggregation_levels</code>: A named list, where each name corresponds to the administrative aggregation level, and each value is a character vector with corresponding grouping fields in the <code>aggregation_table</code>.</li>
+<li><code>population_raster</code>: A raster with the same dimensions as <code>id_raster</code> that contains population estimates for each pixel. Aggregation from pixels to administrative boundaries accounts for varying pixel-level populations as well as fractional pixel areas.</li>
+</ul>
+<hr />
+</div>
+<div id="logging" class="section level1">
+<h1>5: Logging</h1>
+<p>Finally, the setting <code>verbose</code> (default <code>TRUE</code>) governs whether the model will perform detailed logging. You can access model logs afterwards by running <code>mbg::logging_get_timer_log</code>.</p>
+<hr />
+</div>
+<div id="further-reading" class="section level1">
+<h1>6: Further reading</h1>
+<p>Bakka, H., <em>et al.</em> (2018). Spatial modeling with R‐INLA: A review. Wiley Interdisciplinary Reviews: Computational Statistics, 10(6), e1443. <a href="https://doi.org/10.1002/wics.1443" class="uri">https://doi.org/10.1002/wics.1443</a></p>
+<p>Bhatt, S., Cameron, E., Flaxman, S. R., Weiss, D. J., Smith, D. L., &amp; Gething, P. W. (2017). <em>Improved prediction accuracy for disease risk mapping using Gaussian process stacked generalization</em>. Journal of The Royal Society Interface, 14(134), 20170520. <a href="https://doi.org/10.1098/rsif.2017.0520" class="uri">https://doi.org/10.1098/rsif.2017.0520</a></p>
+<p>Freeman, M. (2017). <em>An introduction to hierarchical modeling</em>. <a href="http://mfviz.com/hierarchical-models/" class="uri">http://mfviz.com/hierarchical-models/</a></p>
+<p>Moraga, Paula. (2019). Geospatial Health Data: Modeling and Visualization with R-INLA and Shiny. Chapman &amp; Hall/CRC Biostatistics Series. ISBN 9780367357955. <a href="https://www.paulamoraga.com/book-geospatial/index.html" class="uri">https://www.paulamoraga.com/book-geospatial/index.html</a></p>
+<p>Opitz, T. (2017). <em>Latent Gaussian modeling and INLA: A review with focus on space-time applications.</em> Journal de la société française de statistique, 158(3), 62-85. <a href="https://www.numdam.org/article/JSFS_2017__158_3_62_0.pdf" class="uri">https://www.numdam.org/article/JSFS_2017__158_3_62_0.pdf</a></p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
