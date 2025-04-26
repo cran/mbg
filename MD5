@@ -1,4 +1,4 @@
-e8cc02c7f64713d983963a9313e997cf *DESCRIPTION
+15d52840bd20a094fbd9f1e86a65a009 *DESCRIPTION
 a2a58ba3536c404dc54c2dd095106e6b *LICENSE
 ffd48d0c41e5fc6ff03eea96257b28a6 *NAMESPACE
 b0fbe5263fd2a78e1b198d3c006d4510 *R/MbgModelRunner.R
@@ -6,17 +6,17 @@ ad1e53f4747b3a4a41266d45c6a75e7b *R/aggregate_grid_to_polygons.R
 9ab0bc970fe21a3658184db7e2f475a5 *R/build_aggregation_table.R
 c3f6b9c117c68bb5c9b4129d39c8efcc *R/build_id_raster.R
 ef73c98aaba5f98903475975c56e956d *R/fit_inla_model.R
-08a6c3f1044d443cab8429469031f31f *R/generate_cell_draws_and_summarize.R
+3403082ae3139ee55344d3ba3583c7b3 *R/generate_cell_draws_and_summarize.R
 ac68a5aa253bae08f3576bdf38df8a8d *R/load_covariates.R
 12ef675e0184c7866ec96a433a08dfc1 *R/logging.R
-755d0305624438598086d868823b6ec2 *R/prepare_inla_data_stack.R
+b2deb0731f36d8df9e35000ab73edd6c *R/prepare_inla_data_stack.R
 7f24b6c9a2608e01632f707526520dd8 *R/run_ml_models.R
 58ebb8c62d2d065213ce6808878c35a1 *R/summarize_draws.R
 be4de12d61e740018c6f4a3daa47b1fb *R/utilities.R
 99323d9e11cdd9482862d2d502fe8d5e *R/validation_functions.R
 4ab90be901fa7a5f7df8e04ff56c3618 *R/vif.R
 6b620ee4cd400cf574272a2793d86469 *R/zzz.R
-d804c322db75fcb2475613b7fbac04c7 *README.md
+83d48e099a20026a55b2df5947696c76 *README.md
 7080893e02c49cd296d4424b9be55069 *build/partial.rdb
 e2246b429dadd204159f604c5d5b7ba5 *build/vignette.rds
 9c047a65daafd580da40c3ec863c21f3 *inst/doc/all-model-options.Rmd
@@ -47,6 +47,7 @@ a9c48f00c2805c829d2fd4caca6d44c0 *man/build_id_raster.Rd
 1d4db473136349496dc1534d6c47c25b *man/calculate_pixel_fractions_single_polygon.Rd
 caac3b05fbaa15870b900edc7beb0af4 *man/dissolve_sf_by_attribute.Rd
 7204f27f2ebb3001e62dfff2565d8cec *man/dot-onAttach.Rd
+d12516ee5baaf2a2fc534d9fa6deb0c9 *man/figures/mbg_workflow.png
 05ed969f4b245ead6fe36915680ed80b *man/fit_inla_model.Rd
 da69834219ae2623514277ea83ca0017 *man/generate_cell_draws_and_summarize.Rd
 1665fbbad7779aea64957352b648f035 *man/get_current_year.Rd

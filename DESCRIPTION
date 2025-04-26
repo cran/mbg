@@ -1,6 +1,6 @@
 Package: mbg
 Title: Model-Based Geostatistics
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: c(
     person("Nathaniel", "Henry", email = "nat@henryspatialanalysis.com",
         role = c("aut", "cre"), comment = c(ORCID = "0000-0001-8150-4988")),
@@ -23,9 +23,9 @@ VignetteBuilder: knitr
 URL: https://henryspatialanalysis.github.io/mbg/
 BugReports: https://github.com/henryspatialanalysis/mbg/issues
 NeedsCompilation: no
-Packaged: 2025-03-31 22:44:30 UTC; nathenry
+Packaged: 2025-04-25 23:29:47 UTC; nathenry
 Author: Nathaniel Henry [aut, cre] (<https://orcid.org/0000-0001-8150-4988>),
   Benjamin Mayala [aut]
 Maintainer: Nathaniel Henry <nat@henryspatialanalysis.com>
 Repository: CRAN
-Date/Publication: 2025-04-02 09:00:06 UTC
+Date/Publication: 2025-04-26 02:20:02 UTC
