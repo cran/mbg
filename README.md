@@ -1,8 +1,8 @@
 # Model-Based Geostatistics
 
-[![CRAN](https://www.r-pkg.org/badges/version/mbg?color=ffcc00)](https://cran.r-project.org/package=mbg) [![Documentation build](https://github.com/henryspatialanalysis/mbg/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/henryspatialanalysis/mbg/actions/workflows/pkgdown.yaml)
-
-
+[![CRAN](https://www.r-pkg.org/badges/version/mbg?color=ffcc00)](https://cran.r-project.org/package=mbg)
+[![Total downloads](https://cranlogs.r-pkg.org/badges/grand-total/mbg?color=blue)](https://cran.r-project.org/package=mbg)
+[![Build status](https://github.com/henryspatialanalysis/mbg/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/henryspatialanalysis/mbg/actions/workflows/pkgdown.yaml)
 
 **`mbg` is an R package for model-based geostatistics.**
 
@@ -39,3 +39,12 @@ A typical MBG workflow includes the following steps:
 7. _(Optional):_ **Aggregate** from pixels to administrative boundaries, preserving uncertainty
 
 For more details, see the [introductory vignette](https://henryspatialanalysis.github.io/mbg/articles/mbg.html).
+
+---
+
+### Acknowledgments
+
+Many thanks to the following groups of people for their contributions to the package:
+
+- IHME's Local Burden of Disease core code team, for their development of geostatistical software tools that helped inspire this package. Special thanks to Aaron Osgood-Zimmerman, Ian Davis, John VanderHeide, Jon Mosser, Katie Wilson, Lauren Woyczynski, Michael Collison, Michael Cork, Mike Richards, Nafis Sadat, Neal Marquez, and Roy Burstein.
+- The Geospatial Analysis team at the Demographic and Health Surveys Program
